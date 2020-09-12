@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accès aux évaluations des enseignements</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="ressources.js"></script> 
+</head>
+<body>
+    <h1>Accès aux évaluations des enseignements</h1>
+    <p>Sélection du module</p>
+    <select id="module" onchange="afficher_lien()">
+        <option value="">--Choisir un module--</option>
+        <option value="M1104">M1104 - Fondamentaux mathématiques</option>
+        <option value="M1105">M1105 - Statistiques appliquées</option>
+    </select>
+    <div class="aff">
+        <p class>Lien vers l'évaluation :</p>
+        <a id="lien" href="" target = "_blank"></a>
+        <p class>QRCode :</p>
+        <img id="qrcode" src="" alt="" width="200" height="200" />
+    </div>
+</body>
+</html> 
