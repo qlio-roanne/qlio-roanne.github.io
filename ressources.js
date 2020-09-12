@@ -1,3 +1,12 @@
+window.onload = function(){
+    var titre = document.getElementById("titre");
+    var date = new Date();
+    var mois = date.getMonth() + 1;
+    var année = parseInt(date.getFullYear().toString(), 10);
+    if (mois <= 6) { année = année - 1; };
+    titre.innerText = titre.innerText + " " + année.toString() + "-" + (année+1).toString();
+};
+
 function afficher_lien() {
     var module = document.getElementById("module");
     var lien = document.getElementById("lien");
@@ -5,7 +14,7 @@ function afficher_lien() {
     var code = module.options[module.selectedIndex].value;
     var affichages = document.getElementsByClassName("aff");
 
-    if (code == "") { window.alert("Veuillez sélectionner un module.");
+    if (code == "") {
         lien.innerText = "";
         lien.setAttribute("href","");
         qrcode.setAttribute("src","");
@@ -30,4 +39,4 @@ function afficher_lien() {
     for(var i=0; i<affichages.length; i++) {
         affichages[i].style.visibility = "visible";
         };
-}
+};
