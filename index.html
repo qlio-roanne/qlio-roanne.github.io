@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
     <title>Évaluations des activités</title>
 
+
+
 	<!-- Support Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -26,7 +28,7 @@
 			<img class="logo float-right" src="logos/QLiO.png">
 		</div>
 	</div> 
-	<p>Sélection du module :</p>	
+	<h3>Sélection du module :</h3>	
     <select class="form-control" id="module" onchange="afficher_lien()">
         <option value="">--Choisir un module--</option>
         <option value="M1101">M1101 - Anglais</option>
@@ -118,11 +120,12 @@
         <option value="RCP5-Santé">RCP5-Santé - Logistique en milieu hospitalier</option>
         <option value="RCP6">RCP6 - Applications à la Qualité, Logistique Industrielle et Organisation en anglais</option>
     </select>
-    <div class="aff">
-        <p class>Lien vers l'évaluation :</p>
-        <a id="lien" href="" target = "_blank"></a>
-        <p class>QRCode :</p>
-        <img id="qrcode" src="" alt="" width="200" height="200" />
+    <div>
+	
+        <h4 class="aff my-2">Lien vers l'évaluation :</h4>
+        <a class="aff my-2" id="lien" href="" target = "_blank"></a>
+        <h4 class="aff my-2">QRCode :</h4>
+        <img class="aff my-2" id="qrcode" src="" alt="" width="200" height="200" />
     </div>
 </body>
 </html> 
