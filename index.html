@@ -2,7 +2,7 @@
 <html>
 <head lang="fr">
 	<meta charset="utf-8">
-    <title>Evaluations des activités</title>
+    <title>Évaluations des activités</title>
 
 	<!-- Support Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -11,13 +11,22 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-
     <link rel="stylesheet" href="style.css">
     <script src="ressources.js"></script> 
 </head>
 <body class="container-fluid">
-    <h1 class="bg-dark text-white p-3 my-3 " id="titre">Accès aux évaluations des activités</h1>
-    <p>Sélection du module :</p>
+	<div class="row bg-dark text-white p-3 my-3">
+		<div class="col-sm1">
+			<img class="logo float-left" src="logos/IUT-Roanne.png">
+		</div>
+		<div class="col">
+			<h1 class="display-4" style="text-align:center" id="titre">Évaluations des activités</h1>
+		</div>
+		<div class="col-sm1">
+			<img class="logo float-right" src="logos/QLiO.png">
+		</div>
+	</div> 
+	<p>Sélection du module :</p>	
     <select class="form-control" id="module" onchange="afficher_lien()">
         <option value="">--Choisir un module--</option>
         <option value="M1101">M1101 - Anglais</option>
