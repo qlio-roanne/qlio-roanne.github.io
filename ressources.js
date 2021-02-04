@@ -5,13 +5,21 @@ window.onload = function(){
     var année = parseInt(date.getFullYear().toString(), 10);
     if (mois <= 6) { année = année - 1; };
     titre.innerText = titre.innerText + " " + année.toString() + "-" + (année+1).toString();
+
+    var html = document.getElementById("activite").innerHTML;
+	var evals = JSON.parse(data);
+	for(var key in evals) {
+		window.alert(key);
+		html += "<option value=" + key  + ">" + key + " - " + evals[key] + "</option>"
+	};
+	document.getElementById("activite").innerHTML = html;
 };
 
 function afficher_lien() {
-    var module = document.getElementById("module");
+    var activite = document.getElementById("activite");
     var lien = document.getElementById("lien");
     var qrcode = document.getElementById("qrcode");
-    var code = module.options[module.selectedIndex].value;
+    var code = activite.options[activite.selectedIndex].value;
     var affichages = document.getElementsByClassName("aff");
 
     if (code == "") {
