@@ -9,7 +9,6 @@ window.onload = function(){
     var html = document.getElementById("activite").innerHTML;
 	var evals = JSON.parse(data);
 	for(var key in evals) {
-		window.alert(key);
 		html += "<option value=" + key  + ">" + key + " - " + evals[key] + "</option>"
 	};
 	document.getElementById("activite").innerHTML = html;
