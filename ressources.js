@@ -1,12 +1,13 @@
 window.onload = function(){
-    var titre = document.getElementById("titre");
+	var titre = document.getElementById("titre");
 	var infos = JSON.parse(data);
+	var html = document.getElementById("activite").innerHTML;
     titre.innerText = titre.innerText + " " + infos.Année_formatée + " - Vague n°" + infos.Vague;
-    var html = document.getElementById("activite").innerHTML;
 	for(var key in infos.Evals) {
 		html += "<option value=" + key  + ">" + key + " - " + infos.Evals[key] + "</option>"
 	};
 	document.getElementById("activite").innerHTML = html;
+	window.qrcode = new QRCode(document.getElementById("qrcode"), "");
 };
 
 function afficher_lien() {
@@ -20,7 +21,6 @@ function afficher_lien() {
     if (code == "") {
         lien.innerText = "";
         lien.setAttribute("href","");
-        qrcode.setAttribute("src","");
 
         for(var i=0; i<affichages.length; i++) {
             affichages[i].style.visibility = "hidden";
@@ -28,11 +28,10 @@ function afficher_lien() {
         return;};
 
     var adresse = "https://educ.sphinxonline.net/surveyserver/s/CIUSNCZO/" + infos.Année + "_" + code + "/questionnaire.htm";
-    var qradr = " https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + adresse;
     
     lien.innerText = adresse;
     lien.setAttribute("href",adresse);
-    qrcode.setAttribute("src",qradr);
+	window.qrcode.makeCode(adresse);
 
     for(var i=0; i<affichages.length; i++) {
         affichages[i].style.visibility = "visible";
